@@ -1,4 +1,4 @@
-###TODO: StrengthenStar, Attack
+###TODO: StrengthenStar, Attack.executeTarget
 from players import Player
 from units import Unit
 from regions import Region
@@ -12,6 +12,7 @@ class Order:
         self.region = region
         self.raidable = False
         self.raidableStar = False
+        self.advantage = 0
 
     
     def place(self, region: Region):

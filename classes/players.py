@@ -31,3 +31,27 @@ class Player:
     
     def decideSupport(region: Region): # 3rd party support - others are implied
         return False
+    
+class Baratheon(Player):
+    pass
+
+class Stark(Player):
+    pass
+
+class Lannister(Player):
+    pass
+
+class Greyjoy(Player):
+    pass
+
+class Tyrell(Player):
+    pass
+
+class Martell(Player):
+    pass
+
+class Arryn(Player):
+    pass
+
+class Targaryen(Player):
+    pass
