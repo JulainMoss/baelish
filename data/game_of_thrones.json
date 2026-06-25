@@ -1,0 +1,1276 @@
+{
+  "nodes": [
+    {
+      "index": 0,
+      "color": "#6495ED",
+      "name": "Lodowa Zatoka",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 43,
+      "y": 28
+    },
+    {
+      "index": 1,
+      "color": "white",
+      "name": "Czarny Zamek",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 132,
+      "y": 32
+    },
+    {
+      "index": 2,
+      "color": "#6495ED",
+      "name": "Morze Dreszczy",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 291,
+      "y": 32
+    },
+    {
+      "index": 3,
+      "color": "white",
+      "name": "Winterfell",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        },
+        {
+          "name": "port",
+          "value": ""
+        },
+        {
+          "name": "home",
+          "value": "Stark"
+        }
+      ],
+      "x": 132,
+      "y": 86
+    },
+    {
+      "index": 4,
+      "color": "white",
+      "name": "Karhold",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 175,
+      "y": 66
+    },
+    {
+      "index": 5,
+      "color": "white",
+      "name": "Kamienny Brzeg",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 77,
+      "y": 95
+    },
+    {
+      "index": 6,
+      "color": "white",
+      "name": "Biały Port",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        },
+        {
+          "name": "port",
+          "value": ""
+        }
+      ],
+      "x": 183,
+      "y": 100
+    },
+    {
+      "index": 7,
+      "color": "white",
+      "name": "Wdowia Strażnica",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 206,
+      "y": 132
+    },
+    {
+      "index": 8,
+      "color": "white",
+      "name": "Fosa Cailin",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        }
+      ],
+      "x": 143,
+      "y": 148
+    },
+    {
+      "index": 9,
+      "color": "#6495ED",
+      "name": "Wąskie Morze",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 337,
+      "y": 170
+    },
+    {
+      "index": 10,
+      "color": "black",
+      "name": "Strażnica n. Szarą Wodą",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 80,
+      "y": 141
+    },
+    {
+      "index": 11,
+      "color": "black",
+      "name": "Palec Flinta",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        }
+      ],
+      "x": 32,
+      "y": 151
+    },
+    {
+      "index": 12,
+      "color": "#6495ED",
+      "name": "Morze Zachodzącego Słońca",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 40,
+      "y": 305
+    },
+    {
+      "index": 13,
+      "color": "#6495ED",
+      "name": "Zatoka Żelaznych Ludzi",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 72,
+      "y": 182
+    },
+    {
+      "index": 14,
+      "color": "black",
+      "name": "Pyke",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        },
+        {
+          "name": "port",
+          "value": ""
+        },
+        {
+          "name": "home",
+          "value": "Greyjoy"
+        }
+      ],
+      "x": 14,
+      "y": 209
+    },
+    {
+      "index": 15,
+      "color": "black",
+      "name": "Seagard",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 128,
+      "y": 191
+    },
+    {
+      "index": 16,
+      "color": "red",
+      "name": "Riverrun",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 131,
+      "y": 226
+    },
+    {
+      "index": 17,
+      "color": "#6495ED",
+      "name": "Złota Cieśnina",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 66,
+      "y": 248
+    },
+    {
+      "index": 18,
+      "color": "red",
+      "name": "Lannisport",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "supply",
+          "value": "2"
+        },
+        {
+          "name": "port",
+          "value": ""
+        },
+        {
+          "name": "home",
+          "value": "Lannister"
+        }
+      ],
+      "x": 100,
+      "y": 270
+    },
+    {
+      "index": 19,
+      "color": "red",
+      "name": "Mokradła Morskiego Traktu",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 65,
+      "y": 357
+    },
+    {
+      "index": 20,
+      "color": "red",
+      "name": "Kamienny Sept",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 149,
+      "y": 280
+    },
+    {
+      "index": 21,
+      "color": "red",
+      "name": "Harrenhal",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 173,
+      "y": 244
+    },
+    {
+      "index": 22,
+      "color": "white",
+      "name": "Bliźniaki",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 171,
+      "y": 185
+    },
+    {
+      "index": 23,
+      "color": "white",
+      "name": "Paluchy",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 223,
+      "y": 180
+    },
+    {
+      "index": 24,
+      "color": "yellow",
+      "name": "Góry Księżycowe",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 194,
+      "y": 207
+    },
+    {
+      "index": 25,
+      "color": "yellow",
+      "name": "Orle Gniazdo",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "muster",
+          "value": "1"
+        }
+      ],
+      "x": 264,
+      "y": 200
+    },
+    {
+      "index": 26,
+      "color": "yellow",
+      "name": "Szczypcowy Przylądek",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        }
+      ],
+      "x": 240,
+      "y": 238
+    },
+    {
+      "index": 27,
+      "color": "#6495ED",
+      "name": "Zatoka Rozbitków",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 365,
+      "y": 291
+    },
+    {
+      "index": 28,
+      "color": "#6495ED",
+      "name": "Zachodnie Morze Letnie",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 10,
+      "y": 587
+    },
+    {
+      "index": 29,
+      "color": "green",
+      "name": "Arbor",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 48,
+      "y": 549
+    },
+    {
+      "index": 30,
+      "color": "#6495ED",
+      "name": "Cieśnina Redwyne'ów",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 63,
+      "y": 516
+    },
+    {
+      "index": 31,
+      "color": "green",
+      "name": "Wysogród",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "supply",
+          "value": "2"
+        },
+        {
+          "name": "home",
+          "value": "Tyrell"
+        }
+      ],
+      "x": 82,
+      "y": 433
+    },
+    {
+      "index": 32,
+      "color": "red",
+      "name": "Czarny Nurt",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "2"
+        }
+      ],
+      "x": 172,
+      "y": 328
+    },
+    {
+      "index": 33,
+      "color": "yellow",
+      "name": "Królewska Przystań",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "2"
+        }
+      ],
+      "x": 239,
+      "y": 316
+    },
+    {
+      "index": 34,
+      "color": "#6495ED",
+      "name": "Czarna Zatoka",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 264,
+      "y": 274
+    },
+    {
+      "index": 35,
+      "color": "green",
+      "name": "Reach",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        }
+      ],
+      "x": 176,
+      "y": 372
+    },
+    {
+      "index": 36,
+      "color": "yellow",
+      "name": "Królewski Las",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 269,
+      "y": 351
+    },
+    {
+      "index": 37,
+      "color": "green",
+      "name": "Stare Miasto",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "port",
+          "value": ""
+        }
+      ],
+      "x": 110,
+      "y": 479
+    },
+    {
+      "index": 38,
+      "color": "green",
+      "name": "Trzy Wierze",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 121,
+      "y": 528
+    },
+    {
+      "index": 39,
+      "color": "green",
+      "name": "Dornijskie Pogranicze",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 157,
+      "y": 419
+    },
+    {
+      "index": 40,
+      "color": "yellow",
+      "name": "Smocza Skała",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        },
+        {
+          "name": "port",
+          "value": ""
+        },
+        {
+          "name": "home",
+          "value": "Baratheon"
+        }
+      ],
+      "x": 330,
+      "y": 251
+    },
+    {
+      "index": 41,
+      "color": "#6495ED",
+      "name": "Wschodnie Morze Letnie",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 363,
+      "y": 562
+    },
+    {
+      "index": 42,
+      "color": "yellow",
+      "name": "Koniec Burzy",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        },
+        {
+          "name": "port",
+          "value": ""
+        }
+      ],
+      "x": 308,
+      "y": 399
+    },
+    {
+      "index": 43,
+      "color": "orange",
+      "name": "Szlak Kości",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        }
+      ],
+      "x": 241,
+      "y": 432
+    },
+    {
+      "index": 44,
+      "color": "orange",
+      "name": "Przełęcz Księcia",
+      "traits": [
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 182,
+      "y": 467
+    },
+    {
+      "index": 45,
+      "color": "#6495ED",
+      "name": "Morze Dornijskie",
+      "traits": [
+        {
+          "name": "sea",
+          "value": ""
+        }
+      ],
+      "x": 294,
+      "y": 465
+    },
+    {
+      "index": 46,
+      "color": "orange",
+      "name": "Yronwood",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        }
+      ],
+      "x": 236,
+      "y": 490
+    },
+    {
+      "index": 47,
+      "color": "orange",
+      "name": "Starfall",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 175,
+      "y": 544
+    },
+    {
+      "index": 48,
+      "color": "orange",
+      "name": "Słoneczna Włócznia",
+      "traits": [
+        {
+          "name": "muster",
+          "value": "2"
+        },
+        {
+          "name": "power",
+          "value": "1"
+        },
+        {
+          "name": "supply",
+          "value": "1"
+        },
+        {
+          "name": "port",
+          "value": ""
+        },
+        {
+          "name": "home",
+          "value": "Martell"
+        }
+      ],
+      "x": 307,
+      "y": 504
+    },
+    {
+      "index": 49,
+      "color": "orange",
+      "name": "Słony Brzeg",
+      "traits": [
+        {
+          "name": "supply",
+          "value": "1"
+        }
+      ],
+      "x": 252,
+      "y": 532
+    }
+  ],
+  "edges": [
+    {
+      "i": 0,
+      "j": 1
+    },
+    {
+      "i": 1,
+      "j": 3
+    },
+    {
+      "i": 1,
+      "j": 4
+    },
+    {
+      "i": 1,
+      "j": 2
+    },
+    {
+      "i": 5,
+      "j": 3
+    },
+    {
+      "i": 0,
+      "j": 5
+    },
+    {
+      "i": 3,
+      "j": 6
+    },
+    {
+      "i": 2,
+      "j": 6
+    },
+    {
+      "i": 6,
+      "j": 7
+    },
+    {
+      "i": 2,
+      "j": 7
+    },
+    {
+      "i": 3,
+      "j": 8
+    },
+    {
+      "i": 8,
+      "j": 6
+    },
+    {
+      "i": 2,
+      "j": 9
+    },
+    {
+      "i": 8,
+      "j": 9
+    },
+    {
+      "i": 7,
+      "j": 9
+    },
+    {
+      "i": 10,
+      "j": 8
+    },
+    {
+      "i": 0,
+      "j": 10
+    },
+    {
+      "i": 0,
+      "j": 11
+    },
+    {
+      "i": 11,
+      "j": 10
+    },
+    {
+      "i": 11,
+      "j": 12
+    },
+    {
+      "i": 11,
+      "j": 13
+    },
+    {
+      "i": 14,
+      "j": 13
+    },
+    {
+      "i": 12,
+      "j": 13
+    },
+    {
+      "i": 10,
+      "j": 15
+    },
+    {
+      "i": 13,
+      "j": 15
+    },
+    {
+      "i": 8,
+      "j": 15
+    },
+    {
+      "i": 10,
+      "j": 13
+    },
+    {
+      "i": 13,
+      "j": 16
+    },
+    {
+      "i": 15,
+      "j": 16
+    },
+    {
+      "i": 17,
+      "j": 12
+    },
+    {
+      "i": 13,
+      "j": 17
+    },
+    {
+      "i": 17,
+      "j": 16
+    },
+    {
+      "i": 17,
+      "j": 18
+    },
+    {
+      "i": 16,
+      "j": 18
+    },
+    {
+      "i": 18,
+      "j": 19
+    },
+    {
+      "i": 17,
+      "j": 19
+    },
+    {
+      "i": 12,
+      "j": 19
+    },
+    {
+      "i": 16,
+      "j": 20
+    },
+    {
+      "i": 18,
+      "j": 20
+    },
+    {
+      "i": 19,
+      "j": 20
+    },
+    {
+      "i": 16,
+      "j": 21
+    },
+    {
+      "i": 20,
+      "j": 21
+    },
+    {
+      "i": 8,
+      "j": 22
+    },
+    {
+      "i": 22,
+      "j": 9
+    },
+    {
+      "i": 15,
+      "j": 22
+    },
+    {
+      "i": 22,
+      "j": 23
+    },
+    {
+      "i": 23,
+      "j": 9
+    },
+    {
+      "i": 22,
+      "j": 24
+    },
+    {
+      "i": 24,
+      "j": 23
+    },
+    {
+      "i": 24,
+      "j": 9
+    },
+    {
+      "i": 24,
+      "j": 25
+    },
+    {
+      "i": 9,
+      "j": 25
+    },
+    {
+      "i": 6,
+      "j": 9
+    },
+    {
+      "i": 21,
+      "j": 26
+    },
+    {
+      "i": 24,
+      "j": 26
+    },
+    {
+      "i": 26,
+      "j": 9
+    },
+    {
+      "i": 9,
+      "j": 27
+    },
+    {
+      "i": 26,
+      "j": 27
+    },
+    {
+      "i": 12,
+      "j": 28
+    },
+    {
+      "i": 29,
+      "j": 28
+    },
+    {
+      "i": 30,
+      "j": 29
+    },
+    {
+      "i": 19,
+      "j": 31
+    },
+    {
+      "i": 28,
+      "j": 31
+    },
+    {
+      "i": 28,
+      "j": 19
+    },
+    {
+      "i": 31,
+      "j": 30
+    },
+    {
+      "i": 19,
+      "j": 32
+    },
+    {
+      "i": 20,
+      "j": 32
+    },
+    {
+      "i": 21,
+      "j": 32
+    },
+    {
+      "i": 26,
+      "j": 32
+    },
+    {
+      "i": 26,
+      "j": 33
+    },
+    {
+      "i": 32,
+      "j": 33
+    },
+    {
+      "i": 26,
+      "j": 34
+    },
+    {
+      "i": 34,
+      "j": 27
+    },
+    {
+      "i": 34,
+      "j": 33
+    },
+    {
+      "i": 32,
+      "j": 35
+    },
+    {
+      "i": 19,
+      "j": 35
+    },
+    {
+      "i": 31,
+      "j": 35
+    },
+    {
+      "i": 35,
+      "j": 33
+    },
+    {
+      "i": 33,
+      "j": 36
+    },
+    {
+      "i": 34,
+      "j": 36
+    },
+    {
+      "i": 36,
+      "j": 27
+    },
+    {
+      "i": 35,
+      "j": 36
+    },
+    {
+      "i": 31,
+      "j": 37
+    },
+    {
+      "i": 30,
+      "j": 37
+    },
+    {
+      "i": 30,
+      "j": 38
+    },
+    {
+      "i": 28,
+      "j": 38
+    },
+    {
+      "i": 37,
+      "j": 38
+    },
+    {
+      "i": 35,
+      "j": 39
+    },
+    {
+      "i": 31,
+      "j": 39
+    },
+    {
+      "i": 37,
+      "j": 39
+    },
+    {
+      "i": 39,
+      "j": 38
+    },
+    {
+      "i": 40,
+      "j": 27
+    },
+    {
+      "i": 27,
+      "j": 41
+    },
+    {
+      "i": 28,
+      "j": 41
+    },
+    {
+      "i": 36,
+      "j": 42
+    },
+    {
+      "i": 27,
+      "j": 42
+    },
+    {
+      "i": 42,
+      "j": 41
+    },
+    {
+      "i": 39,
+      "j": 43
+    },
+    {
+      "i": 35,
+      "j": 43
+    },
+    {
+      "i": 43,
+      "j": 42
+    },
+    {
+      "i": 43,
+      "j": 36
+    },
+    {
+      "i": 39,
+      "j": 44
+    },
+    {
+      "i": 44,
+      "j": 43
+    },
+    {
+      "i": 38,
+      "j": 44
+    },
+    {
+      "i": 42,
+      "j": 45
+    },
+    {
+      "i": 43,
+      "j": 45
+    },
+    {
+      "i": 44,
+      "j": 46
+    },
+    {
+      "i": 43,
+      "j": 46
+    },
+    {
+      "i": 46,
+      "j": 45
+    },
+    {
+      "i": 44,
+      "j": 47
+    },
+    {
+      "i": 46,
+      "j": 47
+    },
+    {
+      "i": 28,
+      "j": 47
+    },
+    {
+      "i": 45,
+      "j": 48
+    },
+    {
+      "i": 46,
+      "j": 48
+    },
+    {
+      "i": 48,
+      "j": 41
+    },
+    {
+      "i": 46,
+      "j": 49
+    },
+    {
+      "i": 49,
+      "j": 48
+    },
+    {
+      "i": 47,
+      "j": 49
+    },
+    {
+      "i": 49,
+      "j": 41
+    },
+    {
+      "i": 47,
+      "j": 41
+    }
+  ]
+}
