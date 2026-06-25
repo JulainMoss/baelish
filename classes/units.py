@@ -34,8 +34,11 @@ class Siege(LandUnit):
     def __init__(self, region: Region, allegiance: Player):
         super().__init__(region, allegiance)
 
-    def battleScore(self, region: Region):
-        return 4
+    def battleScore(self, region: Region, attacking=False):
+        if region.muster and attacking:
+            return 4
+        else:
+            return 0
 
 class Ship(Unit):
     def __init__(self, region: Region, allegiance: Player):
