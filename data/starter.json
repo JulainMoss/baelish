@@ -1,0 +1,8 @@
+{
+    "Baratheon": {"Smocza Skała": {"rycerz": 1, "piechur": 1}, "Zatoka Rozbitków": {"statek": 2}, "Królewski Las": {"piechur": 1}},
+    "Stark": {"Morze Dreszczy": {"statek": 1}, "Biały Port": {"piechur": 1}, "Winterfell": {"rycerz": 1, "piechur": 1}},
+    "Lannister": {"Złota Cieśnina": {"statek": 1}, "Kamienny Sept": {"piechur": 1}, "Lannisport": {"rycerz": 1, "piechur": 1}},
+    "Greyjoy": {"Strażnica n. Szarą Wodą": {"piechur": 1}, "Zatoka Żelaznych Ludzi": {"statek" : 1}, "Pyke" : {"rycerz": 1, "piechur": 1, "statek": 1}},
+    "Tyrell": {"Cieśnina Redwyne'ów": {"statek": 1}, "Dornijskie Pogranicze": {"piechur": 1}, "Wysogród": {"piechur": 1, "rycerz": 1}},
+    "Martell": {"Morze Dornijskie": {"statek": 1}, "Słoneczna Włócznia": {"rycerz": 1, "piechur": 1}, "Słony Brzeg": {"piechur": 1}}
+}

@@ -2,7 +2,7 @@
    {
       "name": "Lodowa Zatoka",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Czarny Zamek",
@@ -15,7 +15,7 @@
    {
       "name": "Czarny Zamek",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Lodowa Zatoka",
@@ -27,7 +27,7 @@
    {
       "name": "Morze Dreszczy",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Czarny Zamek",
@@ -41,11 +41,11 @@
    {
       "name": "Winterfell",
       "traits": {
-         "muster": "2",
-         "power": "1",
-         "supply": "1",
+         "mobilizacja": "2",
+         "władza": "1",
+         "zaopatrzenie": "1",
          "port": "",
-         "home": "Stark"
+         "dom": "Stark"
       },
       "borders": [
          "Czarny Zamek",
@@ -60,7 +60,7 @@
    {
       "name": "Karhold",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Czarny Zamek",
@@ -71,7 +71,7 @@
    {
       "name": "Kamienny Brzeg",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Winterfell",
@@ -81,7 +81,7 @@
    {
       "name": "Biały Port",
       "traits": {
-         "muster": "1",
+         "mobilizacja": "1",
          "port": ""
       },
       "borders": [
@@ -95,7 +95,7 @@
    {
       "name": "Wdowia Strażnica",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Biały Port",
@@ -106,21 +106,21 @@
    {
       "name": "Fosa Cailin",
       "traits": {
-         "muster": "1"
+         "mobilizacja": "1"
       },
       "borders": [
          "Winterfell",
          "Biały Port",
          "Wąskie Morze",
          "Strażnica n. Szarą Wodą",
-         "Seagard",
+         "morzegard",
          "Bliźniaki"
       ]
    },
    {
       "name": "Wąskie Morze",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Morze Dreszczy",
@@ -138,20 +138,20 @@
    {
       "name": "Strażnica n. Szarą Wodą",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Fosa Cailin",
          "Lodowa Zatoka",
          "Palec Flinta",
-         "Seagard",
+         "morzegard",
          "Zatoka Żelaznych Ludzi"
       ]
    },
    {
       "name": "Palec Flinta",
       "traits": {
-         "muster": "1"
+         "mobilizacja": "1"
       },
       "borders": [
          "Lodowa Zatoka",
@@ -163,7 +163,7 @@
    {
       "name": "Morze Zachodzącego Słońca",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Palec Flinta",
@@ -176,13 +176,13 @@
    {
       "name": "Zatoka Żelaznych Ludzi",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Palec Flinta",
          "Pyke",
          "Morze Zachodzącego Słońca",
-         "Seagard",
+         "morzegard",
          "Strażnica n. Szarą Wodą",
          "Riverrun",
          "Złota Cieśnina"
@@ -191,22 +191,22 @@
    {
       "name": "Pyke",
       "traits": {
-         "muster": "2",
-         "power": "1",
-         "supply": "1",
+         "mobilizacja": "2",
+         "władza": "1",
+         "zaopatrzenie": "1",
          "port": "",
-         "home": "Greyjoy"
+         "dom": "Greyjoy"
       },
       "borders": [
          "Zatoka Żelaznych Ludzi"
       ]
    },
    {
-      "name": "Seagard",
+      "name": "morzegard",
       "traits": {
-         "muster": "2",
-         "power": "1",
-         "supply": "1"
+         "mobilizacja": "2",
+         "władza": "1",
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Strażnica n. Szarą Wodą",
@@ -219,13 +219,13 @@
    {
       "name": "Riverrun",
       "traits": {
-         "muster": "2",
-         "power": "1",
-         "supply": "1"
+         "mobilizacja": "2",
+         "władza": "1",
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Zatoka Żelaznych Ludzi",
-         "Seagard",
+         "morzegard",
          "Złota Cieśnina",
          "Lannisport",
          "Kamienny Sept",
@@ -235,7 +235,7 @@
    {
       "name": "Złota Cieśnina",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Morze Zachodzącego Słońca",
@@ -248,10 +248,10 @@
    {
       "name": "Lannisport",
       "traits": {
-         "muster": "2",
-         "supply": "2",
+         "mobilizacja": "2",
+         "zaopatrzenie": "2",
          "port": "",
-         "home": "Lannister"
+         "dom": "Lannister"
       },
       "borders": [
          "Złota Cieśnina",
@@ -263,7 +263,7 @@
    {
       "name": "Mokradła Morskiego Traktu",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Lannisport",
@@ -279,7 +279,7 @@
    {
       "name": "Kamienny Sept",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Riverrun",
@@ -292,8 +292,8 @@
    {
       "name": "Harrenhal",
       "traits": {
-         "muster": "1",
-         "power": "1"
+         "mobilizacja": "1",
+         "władza": "1"
       },
       "borders": [
          "Riverrun",
@@ -305,12 +305,12 @@
    {
       "name": "Bliźniaki",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Fosa Cailin",
          "Wąskie Morze",
-         "Seagard",
+         "morzegard",
          "Paluchy",
          "Góry Księżycowe"
       ]
@@ -318,7 +318,7 @@
    {
       "name": "Paluchy",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Bliźniaki",
@@ -329,7 +329,7 @@
    {
       "name": "Góry Księżycowe",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Bliźniaki",
@@ -342,8 +342,8 @@
    {
       "name": "Orle Gniazdo",
       "traits": {
-         "muster": "1",
-         "power": "1"
+         "mobilizacja": "1",
+         "władza": "1"
       },
       "borders": [
          "Góry Księżycowe",
@@ -353,7 +353,7 @@
    {
       "name": "Szczypcowy Przylądek",
       "traits": {
-         "muster": "1"
+         "mobilizacja": "1"
       },
       "borders": [
          "Harrenhal",
@@ -368,7 +368,7 @@
    {
       "name": "Zatoka Rozbitków",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Wąskie Morze",
@@ -383,7 +383,7 @@
    {
       "name": "Zachodnie Morze Letnie",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Morze Zachodzącego Słońca",
@@ -399,7 +399,7 @@
    {
       "name": "Arbor",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Zachodnie Morze Letnie",
@@ -409,7 +409,7 @@
    {
       "name": "Cieśnina Redwyne'ów",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Arbor",
@@ -422,9 +422,9 @@
    {
       "name": "Wysogród",
       "traits": {
-         "muster": "2",
-         "supply": "2",
-         "home": "Tyrell"
+         "mobilizacja": "2",
+         "zaopatrzenie": "2",
+         "dom": "Tyrell"
       },
       "borders": [
          "Mokradła Morskiego Traktu",
@@ -438,7 +438,7 @@
    {
       "name": "Czarny Nurt",
       "traits": {
-         "supply": "2"
+         "zaopatrzenie": "2"
       },
       "borders": [
          "Mokradła Morskiego Traktu",
@@ -452,8 +452,8 @@
    {
       "name": "Królewska Przystań",
       "traits": {
-         "muster": "2",
-         "power": "2"
+         "mobilizacja": "2",
+         "władza": "2"
       },
       "borders": [
          "Szczypcowy Przylądek",
@@ -466,7 +466,7 @@
    {
       "name": "Czarna Zatoka",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Szczypcowy Przylądek",
@@ -478,7 +478,7 @@
    {
       "name": "Reach",
       "traits": {
-         "muster": "1"
+         "mobilizacja": "1"
       },
       "borders": [
          "Czarny Nurt",
@@ -493,8 +493,8 @@
    {
       "name": "Królewski Las",
       "traits": {
-         "power": "1",
-         "supply": "1"
+         "władza": "1",
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Królewska Przystań",
@@ -508,7 +508,7 @@
    {
       "name": "Stare Miasto",
       "traits": {
-         "muster": "2",
+         "mobilizacja": "2",
          "port": ""
       },
       "borders": [
@@ -521,7 +521,7 @@
    {
       "name": "Trzy Wierze",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Cieśnina Redwyne'ów",
@@ -534,7 +534,7 @@
    {
       "name": "Dornijskie Pogranicze",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Reach",
@@ -548,11 +548,11 @@
    {
       "name": "Smocza Skała",
       "traits": {
-         "muster": "2",
-         "power": "1",
-         "supply": "1",
+         "mobilizacja": "2",
+         "władza": "1",
+         "zaopatrzenie": "1",
          "port": "",
-         "home": "Baratheon"
+         "dom": "Baratheon"
       },
       "borders": [
          "Zatoka Rozbitków"
@@ -561,7 +561,7 @@
    {
       "name": "Wschodnie Morze Letnie",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Zatoka Rozbitków",
@@ -576,7 +576,7 @@
    {
       "name": "Koniec Burzy",
       "traits": {
-         "muster": "1",
+         "mobilizacja": "1",
          "port": ""
       },
       "borders": [
@@ -590,7 +590,7 @@
    {
       "name": "Szlak Kości",
       "traits": {
-         "power": "1"
+         "władza": "1"
       },
       "borders": [
          "Dornijskie Pogranicze",
@@ -605,8 +605,8 @@
    {
       "name": "Przełęcz Księcia",
       "traits": {
-         "power": "1",
-         "supply": "1"
+         "władza": "1",
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Dornijskie Pogranicze",
@@ -619,7 +619,7 @@
    {
       "name": "Morze Dornijskie",
       "traits": {
-         "sea": ""
+         "morze": ""
       },
       "borders": [
          "Koniec Burzy",
@@ -632,7 +632,7 @@
    {
       "name": "Yronwood",
       "traits": {
-         "muster": "1"
+         "mobilizacja": "1"
       },
       "borders": [
          "Przełęcz Księcia",
@@ -646,8 +646,8 @@
    {
       "name": "Starfall",
       "traits": {
-         "muster": "1",
-         "supply": "1"
+         "mobilizacja": "1",
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Przełęcz Księcia",
@@ -660,11 +660,11 @@
    {
       "name": "Słoneczna Włócznia",
       "traits": {
-         "muster": "2",
-         "power": "1",
-         "supply": "1",
+         "mobilizacja": "2",
+         "władza": "1",
+         "zaopatrzenie": "1",
          "port": "",
-         "home": "Martell"
+         "dom": "Martell"
       },
       "borders": [
          "Morze Dornijskie",
@@ -676,7 +676,7 @@
    {
       "name": "Słony Brzeg",
       "traits": {
-         "supply": "1"
+         "zaopatrzenie": "1"
       },
       "borders": [
          "Yronwood",
