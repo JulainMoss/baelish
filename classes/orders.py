@@ -1,3 +1,4 @@
+###TODO: StrengthenStar, Attack
 from players import Player
 from units import Unit
 from regions import Region
@@ -10,9 +11,8 @@ class Order:
         self.player = player
         self.region = region
         self.raidable = False
+        self.raidableStar = False
 
-    def raidableStar(self) -> bool:
-        return self.raidable
     
     def place(self, region: Region):
         self.region = region
@@ -40,11 +40,15 @@ class Order:
     def raid(self):
         self.remove
 
+    def courtCost(self) -> int:
+        return 0
+
 
 class Stengthen(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
         self.raidable = True
+        self.raidableStar = True
 
     def execute(self) -> list[Region]:
         gain = self.region.power + 1
@@ -61,9 +65,7 @@ class Stengthen(Order):
 class Defend(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
-
-    def raidableStar(self) -> bool:
-        return True
+        self.raidableStar = True
     
     def defenceBonus(self) -> int:
         return 1
@@ -74,11 +76,15 @@ class DefendStar(Order):
     
     def defenceBonus(self) -> int:
         return 2
+    
+    def courtCost(self):
+        return 1
 
 class Support(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
         self.raidable = True
+        self.raidableStar = True
 
     def support(self):
         return 0
@@ -92,11 +98,15 @@ class SupportStar(Support):
 
     def support(self):
         return 1
+    
+    def courtCost(self):
+        return 1
 
 class Raid(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
         self.raidable = True
+        self.raidable
     
     def execute(self) -> list[Region]:
         regions = [region.order.raidable or False for region in self.region.neighbours]
@@ -107,9 +117,19 @@ class Raid(Order):
         region.raid(self.player)
         self.remove()
 
-class Attack(Order):
-    def __init__(self, player: Player, region: Optional[Region]=None):
+class RaidStar(Raid):
+    def __init__(self, player, region: Optional[Region]=None):
         super().__init__(player, region)
+
+    def execute(self):
+        regions = [region.order.raidableStar or False for region in self.region.neighbours]
+        raidable = [True] if self.region.isSea else [not region.isSea for region in self.region.neighbours]
+        return [region for region, condition in zip(self.region.neighbours, regions and raidable) if condition]
+
+class Attack(Order):
+    def __init__(self, player: Player, region: Optional[Region]=None, advantage=0):
+        super().__init__(player, region)
+        self.advantage = advantage
     
     def execute(self, unitsToMove: list[Unit]) -> list[Region]:
         countToMove = len(unitsToMove)
@@ -131,4 +151,8 @@ class Attack(Order):
     
     def executeTarget(self, region: Region):
         pass
-        
+
+class AttackStar(Attack):
+    def __init__(self, player, region = None):
+        super().__init__(player, region, advantage=1)
+        self.courtCost = 1

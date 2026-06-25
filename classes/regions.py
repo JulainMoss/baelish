@@ -26,8 +26,8 @@ class Region:
     def defenceBonus(self):
         return self.order.defenceBonus()
     
-    def calculateSupport(self):
-        if self.order.supporting:
+    def calculateSupport(self, region: Region):
+        if self.order.supporting and (self.isSea or not region.isSea):
             return self.order.support() +  self.calculateArmyStrength()
         else:
             return 0

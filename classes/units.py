@@ -10,7 +10,7 @@ class Unit:
     def canMoveTo(self, region: Region):
         return False
 
-    def battleScore(self, region: Region):
+    def attackScore(self, region: Region):
         return self.strength
 
 class LandUnit(Unit):
@@ -34,11 +34,9 @@ class Siege(LandUnit):
     def __init__(self, region: Region, allegiance: Player):
         super().__init__(region, allegiance)
 
-    def battleScore(self, region: Region, attacking=False):
-        if region.muster and attacking:
+    def battleScore(self, region: Region):
+        if region.muster:
             return 4
-        else:
-            return 0
 
 class Ship(Unit):
     def __init__(self, region: Region, allegiance: Player):
