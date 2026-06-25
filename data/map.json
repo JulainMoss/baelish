@@ -1,0 +1,688 @@
+[
+   {
+      "name": "Lodowa Zatoka",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Czarny Zamek",
+         "Kamienny Brzeg",
+         "Strażnica n. Szarą Wodą",
+         "Palec Flinta",
+         "Winterfell"
+      ]
+   },
+   {
+      "name": "Czarny Zamek",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Lodowa Zatoka",
+         "Winterfell",
+         "Karhold",
+         "Morze Dreszczy"
+      ]
+   },
+   {
+      "name": "Morze Dreszczy",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Czarny Zamek",
+         "Biały Port",
+         "Karhold",
+         "Wdowia Strażnica",
+         "Wąskie Morze",
+         "Winterfell"
+      ]
+   },
+   {
+      "name": "Winterfell",
+      "traits": {
+         "muster": "2",
+         "power": "1",
+         "supply": "1",
+         "port": "",
+         "home": "Stark"
+      },
+      "borders": [
+         "Czarny Zamek",
+         "Kamienny Brzeg",
+         "Biały Port",
+         "Fosa Cailin",
+         "Morze Dreszczy",
+         "Lodowa Zatoka",
+         "Karhold"
+      ]
+   },
+   {
+      "name": "Karhold",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Czarny Zamek",
+         "Morze Dreszczy",
+         "Winterfell"
+      ]
+   },
+   {
+      "name": "Kamienny Brzeg",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Winterfell",
+         "Lodowa Zatoka"
+      ]
+   },
+   {
+      "name": "Biały Port",
+      "traits": {
+         "muster": "1",
+         "port": ""
+      },
+      "borders": [
+         "Winterfell",
+         "Morze Dreszczy",
+         "Wdowia Strażnica",
+         "Fosa Cailin",
+         "Wąskie Morze"
+      ]
+   },
+   {
+      "name": "Wdowia Strażnica",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Biały Port",
+         "Morze Dreszczy",
+         "Wąskie Morze"
+      ]
+   },
+   {
+      "name": "Fosa Cailin",
+      "traits": {
+         "muster": "1"
+      },
+      "borders": [
+         "Winterfell",
+         "Biały Port",
+         "Wąskie Morze",
+         "Strażnica n. Szarą Wodą",
+         "Seagard",
+         "Bliźniaki"
+      ]
+   },
+   {
+      "name": "Wąskie Morze",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Morze Dreszczy",
+         "Fosa Cailin",
+         "Wdowia Strażnica",
+         "Bliźniaki",
+         "Paluchy",
+         "Góry Księżycowe",
+         "Orle Gniazdo",
+         "Biały Port",
+         "Szczypcowy Przylądek",
+         "Zatoka Rozbitków"
+      ]
+   },
+   {
+      "name": "Strażnica n. Szarą Wodą",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Fosa Cailin",
+         "Lodowa Zatoka",
+         "Palec Flinta",
+         "Seagard",
+         "Zatoka Żelaznych Ludzi"
+      ]
+   },
+   {
+      "name": "Palec Flinta",
+      "traits": {
+         "muster": "1"
+      },
+      "borders": [
+         "Lodowa Zatoka",
+         "Strażnica n. Szarą Wodą",
+         "Morze Zachodzącego Słońca",
+         "Zatoka Żelaznych Ludzi"
+      ]
+   },
+   {
+      "name": "Morze Zachodzącego Słońca",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Palec Flinta",
+         "Zatoka Żelaznych Ludzi",
+         "Złota Cieśnina",
+         "Mokradła Morskiego Traktu",
+         "Zachodnie Morze Letnie"
+      ]
+   },
+   {
+      "name": "Zatoka Żelaznych Ludzi",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Palec Flinta",
+         "Pyke",
+         "Morze Zachodzącego Słońca",
+         "Seagard",
+         "Strażnica n. Szarą Wodą",
+         "Riverrun",
+         "Złota Cieśnina"
+      ]
+   },
+   {
+      "name": "Pyke",
+      "traits": {
+         "muster": "2",
+         "power": "1",
+         "supply": "1",
+         "port": "",
+         "home": "Greyjoy"
+      },
+      "borders": [
+         "Zatoka Żelaznych Ludzi"
+      ]
+   },
+   {
+      "name": "Seagard",
+      "traits": {
+         "muster": "2",
+         "power": "1",
+         "supply": "1"
+      },
+      "borders": [
+         "Strażnica n. Szarą Wodą",
+         "Zatoka Żelaznych Ludzi",
+         "Fosa Cailin",
+         "Riverrun",
+         "Bliźniaki"
+      ]
+   },
+   {
+      "name": "Riverrun",
+      "traits": {
+         "muster": "2",
+         "power": "1",
+         "supply": "1"
+      },
+      "borders": [
+         "Zatoka Żelaznych Ludzi",
+         "Seagard",
+         "Złota Cieśnina",
+         "Lannisport",
+         "Kamienny Sept",
+         "Harrenhal"
+      ]
+   },
+   {
+      "name": "Złota Cieśnina",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Morze Zachodzącego Słońca",
+         "Zatoka Żelaznych Ludzi",
+         "Riverrun",
+         "Lannisport",
+         "Mokradła Morskiego Traktu"
+      ]
+   },
+   {
+      "name": "Lannisport",
+      "traits": {
+         "muster": "2",
+         "supply": "2",
+         "port": "",
+         "home": "Lannister"
+      },
+      "borders": [
+         "Złota Cieśnina",
+         "Riverrun",
+         "Mokradła Morskiego Traktu",
+         "Kamienny Sept"
+      ]
+   },
+   {
+      "name": "Mokradła Morskiego Traktu",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Lannisport",
+         "Złota Cieśnina",
+         "Morze Zachodzącego Słońca",
+         "Kamienny Sept",
+         "Wysogród",
+         "Zachodnie Morze Letnie",
+         "Czarny Nurt",
+         "Reach"
+      ]
+   },
+   {
+      "name": "Kamienny Sept",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Riverrun",
+         "Lannisport",
+         "Mokradła Morskiego Traktu",
+         "Harrenhal",
+         "Czarny Nurt"
+      ]
+   },
+   {
+      "name": "Harrenhal",
+      "traits": {
+         "muster": "1",
+         "power": "1"
+      },
+      "borders": [
+         "Riverrun",
+         "Kamienny Sept",
+         "Szczypcowy Przylądek",
+         "Czarny Nurt"
+      ]
+   },
+   {
+      "name": "Bliźniaki",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Fosa Cailin",
+         "Wąskie Morze",
+         "Seagard",
+         "Paluchy",
+         "Góry Księżycowe"
+      ]
+   },
+   {
+      "name": "Paluchy",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Bliźniaki",
+         "Wąskie Morze",
+         "Góry Księżycowe"
+      ]
+   },
+   {
+      "name": "Góry Księżycowe",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Bliźniaki",
+         "Paluchy",
+         "Wąskie Morze",
+         "Orle Gniazdo",
+         "Szczypcowy Przylądek"
+      ]
+   },
+   {
+      "name": "Orle Gniazdo",
+      "traits": {
+         "muster": "1",
+         "power": "1"
+      },
+      "borders": [
+         "Góry Księżycowe",
+         "Wąskie Morze"
+      ]
+   },
+   {
+      "name": "Szczypcowy Przylądek",
+      "traits": {
+         "muster": "1"
+      },
+      "borders": [
+         "Harrenhal",
+         "Góry Księżycowe",
+         "Wąskie Morze",
+         "Zatoka Rozbitków",
+         "Czarny Nurt",
+         "Królewska Przystań",
+         "Czarna Zatoka"
+      ]
+   },
+   {
+      "name": "Zatoka Rozbitków",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Wąskie Morze",
+         "Szczypcowy Przylądek",
+         "Czarna Zatoka",
+         "Królewski Las",
+         "Smocza Skała",
+         "Wschodnie Morze Letnie",
+         "Koniec Burzy"
+      ]
+   },
+   {
+      "name": "Zachodnie Morze Letnie",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Morze Zachodzącego Słońca",
+         "Arbor",
+         "Wysogród",
+         "Mokradła Morskiego Traktu",
+         "Trzy Wierze",
+         "Wschodnie Morze Letnie",
+         "Starfall",
+         "Cieśnina Redwyne'ów"
+      ]
+   },
+   {
+      "name": "Arbor",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Zachodnie Morze Letnie",
+         "Cieśnina Redwyne'ów"
+      ]
+   },
+   {
+      "name": "Cieśnina Redwyne'ów",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Arbor",
+         "Wysogród",
+         "Stare Miasto",
+         "Trzy Wierze",
+         "Zachodnie Morze Letnie"
+      ]
+   },
+   {
+      "name": "Wysogród",
+      "traits": {
+         "muster": "2",
+         "supply": "2",
+         "home": "Tyrell"
+      },
+      "borders": [
+         "Mokradła Morskiego Traktu",
+         "Zachodnie Morze Letnie",
+         "Cieśnina Redwyne'ów",
+         "Reach",
+         "Stare Miasto",
+         "Dornijskie Pogranicze"
+      ]
+   },
+   {
+      "name": "Czarny Nurt",
+      "traits": {
+         "supply": "2"
+      },
+      "borders": [
+         "Mokradła Morskiego Traktu",
+         "Kamienny Sept",
+         "Harrenhal",
+         "Szczypcowy Przylądek",
+         "Królewska Przystań",
+         "Reach"
+      ]
+   },
+   {
+      "name": "Królewska Przystań",
+      "traits": {
+         "muster": "2",
+         "power": "2"
+      },
+      "borders": [
+         "Szczypcowy Przylądek",
+         "Czarny Nurt",
+         "Czarna Zatoka",
+         "Reach",
+         "Królewski Las"
+      ]
+   },
+   {
+      "name": "Czarna Zatoka",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Szczypcowy Przylądek",
+         "Zatoka Rozbitków",
+         "Królewska Przystań",
+         "Królewski Las"
+      ]
+   },
+   {
+      "name": "Reach",
+      "traits": {
+         "muster": "1"
+      },
+      "borders": [
+         "Czarny Nurt",
+         "Mokradła Morskiego Traktu",
+         "Wysogród",
+         "Królewska Przystań",
+         "Królewski Las",
+         "Dornijskie Pogranicze",
+         "Szlak Kości"
+      ]
+   },
+   {
+      "name": "Królewski Las",
+      "traits": {
+         "power": "1",
+         "supply": "1"
+      },
+      "borders": [
+         "Królewska Przystań",
+         "Czarna Zatoka",
+         "Zatoka Rozbitków",
+         "Reach",
+         "Koniec Burzy",
+         "Szlak Kości"
+      ]
+   },
+   {
+      "name": "Stare Miasto",
+      "traits": {
+         "muster": "2",
+         "port": ""
+      },
+      "borders": [
+         "Wysogród",
+         "Cieśnina Redwyne'ów",
+         "Trzy Wierze",
+         "Dornijskie Pogranicze"
+      ]
+   },
+   {
+      "name": "Trzy Wierze",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Cieśnina Redwyne'ów",
+         "Zachodnie Morze Letnie",
+         "Stare Miasto",
+         "Dornijskie Pogranicze",
+         "Przełęcz Księcia"
+      ]
+   },
+   {
+      "name": "Dornijskie Pogranicze",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Reach",
+         "Wysogród",
+         "Stare Miasto",
+         "Trzy Wierze",
+         "Szlak Kości",
+         "Przełęcz Księcia"
+      ]
+   },
+   {
+      "name": "Smocza Skała",
+      "traits": {
+         "muster": "2",
+         "power": "1",
+         "supply": "1",
+         "port": "",
+         "home": "Baratheon"
+      },
+      "borders": [
+         "Zatoka Rozbitków"
+      ]
+   },
+   {
+      "name": "Wschodnie Morze Letnie",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Zatoka Rozbitków",
+         "Zachodnie Morze Letnie",
+         "Koniec Burzy",
+         "Słoneczna Włócznia",
+         "Słony Brzeg",
+         "Starfall",
+         "Morze Dornijskie"
+      ]
+   },
+   {
+      "name": "Koniec Burzy",
+      "traits": {
+         "muster": "1",
+         "port": ""
+      },
+      "borders": [
+         "Królewski Las",
+         "Zatoka Rozbitków",
+         "Wschodnie Morze Letnie",
+         "Szlak Kości",
+         "Morze Dornijskie"
+      ]
+   },
+   {
+      "name": "Szlak Kości",
+      "traits": {
+         "power": "1"
+      },
+      "borders": [
+         "Dornijskie Pogranicze",
+         "Reach",
+         "Koniec Burzy",
+         "Królewski Las",
+         "Przełęcz Księcia",
+         "Morze Dornijskie",
+         "Yronwood"
+      ]
+   },
+   {
+      "name": "Przełęcz Księcia",
+      "traits": {
+         "power": "1",
+         "supply": "1"
+      },
+      "borders": [
+         "Dornijskie Pogranicze",
+         "Szlak Kości",
+         "Trzy Wierze",
+         "Yronwood",
+         "Starfall"
+      ]
+   },
+   {
+      "name": "Morze Dornijskie",
+      "traits": {
+         "sea": ""
+      },
+      "borders": [
+         "Koniec Burzy",
+         "Szlak Kości",
+         "Yronwood",
+         "Słoneczna Włócznia",
+         "Wschodnie Morze Letnie"
+      ]
+   },
+   {
+      "name": "Yronwood",
+      "traits": {
+         "muster": "1"
+      },
+      "borders": [
+         "Przełęcz Księcia",
+         "Szlak Kości",
+         "Morze Dornijskie",
+         "Starfall",
+         "Słoneczna Włócznia",
+         "Słony Brzeg"
+      ]
+   },
+   {
+      "name": "Starfall",
+      "traits": {
+         "muster": "1",
+         "supply": "1"
+      },
+      "borders": [
+         "Przełęcz Księcia",
+         "Yronwood",
+         "Zachodnie Morze Letnie",
+         "Słony Brzeg",
+         "Wschodnie Morze Letnie"
+      ]
+   },
+   {
+      "name": "Słoneczna Włócznia",
+      "traits": {
+         "muster": "2",
+         "power": "1",
+         "supply": "1",
+         "port": "",
+         "home": "Martell"
+      },
+      "borders": [
+         "Morze Dornijskie",
+         "Yronwood",
+         "Wschodnie Morze Letnie",
+         "Słony Brzeg"
+      ]
+   },
+   {
+      "name": "Słony Brzeg",
+      "traits": {
+         "supply": "1"
+      },
+      "borders": [
+         "Yronwood",
+         "Słoneczna Włócznia",
+         "Starfall",
+         "Wschodnie Morze Letnie"
+      ]
+   }
+]
