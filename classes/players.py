@@ -1,7 +1,20 @@
 import numpy as np
-from orders import Order
-from regions import Region
-from utils import MAX_SUPPLY
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .orders import Order
+    from .regions import Region
+from .utils import MAX_SUPPLY
+
+{
+    "House Baratheon": {"Smocza Skała": {"knight": 1, "levy": 1}, "Zatoka Rozbitków": {"ship": 2}, "Królewski Las": {"levy": 1}},
+    "House Stark": {"Morze Dreszczy": {"ship": 1}, "Biały Port": {"levy": 1}, "Winterfell": {"knight": 1, "levy": 1}},
+    "House Lannister": {"Złota Cieśnina": {"ship": 1}, "Kamienny Sept": {"levy": 1}, "Lannisport": {"knight": 1, "levy": 1}},
+    "House Greyjoy": {"Strażnica n. Szarą Wodą": {"levy": 1}, "Zatoka Żelaznych Ludzi": {"ship" : 1}, "Pyke" : {"knight": 1, "levy": 1, "ship": 1}},
+    "House Tyrell": {"Cieśnina Redwyne'ów": {"ship": 1}, "Dornijskie Pogranicze": {"levy": 1}, "Wysogród": {"levy": 1, "knight": 1}},
+    "House Martell": {"Morze Dornijskie": {"ship": 1}, "Słoneczna Włócznia": {"knight": 1, "levy": 1}, "Słony Brzeg": {"levy": 1}},
+    "Unknown Player": {}
+}
 
 class Player:
     def __init__(self):
@@ -9,10 +22,14 @@ class Player:
         self.power = 0
         self.orders: list[Order] = []
         self.regions: list[Region] = []
+        self.cards = [] # TODO implement house cards
         self.ironThrone = 0
         self.levies = 0
         self.court = 0
         self.powerToGain = 20
+
+    def __str__(self):
+        return "Unknown Player"
 
     def countCrowns(self) -> int:
         return np.sum([region.power for region in self.regions])
@@ -33,25 +50,57 @@ class Player:
         return False
     
 class Baratheon(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Baratheon"
 
 class Stark(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Stark"
 
 class Lannister(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Lannister"
 
 class Greyjoy(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Greyjoy"
 
 class Tyrell(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Tyrell"
 
 class Martell(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Martell"
 
 class Arryn(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Arryn"
 
 class Targaryen(Player):
-    pass
+    def __init__(self):
+        super().__init__()
+
+    def __str__(self):
+        return "House Targaryen"

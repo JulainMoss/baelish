@@ -1,7 +1,10 @@
-from regions import Region
-from players import Player
-from units import Unit
-from orders import Order
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .regions import Region
+    from .players import Player
+    from .units import Unit
+    from .orders import Order
 import numpy as np
 
 ARMY_LIMITS = [
@@ -14,6 +17,8 @@ ARMY_LIMITS = [
     [4, 3, 2, 2, 2]
 ]
 MAX_SUPPLY = 6
+
+FORTIFICATION = ["None", "Castle", "Fortress"]
 
 def checkArmyLimit(armies: list[tuple[str, int]], armyLimit: list[int]) -> bool:
     armySizes = [army for (_, army) in armies]

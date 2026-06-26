@@ -1,22 +1,31 @@
 from __future__ import annotations
 import numpy as np
-from units import Unit
-from players import Player
-from orders import Order
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .units import Unit
+    from .players import Player
+    from .orders import Order
+    from .utils import FORTIFICATION
 
 class Region:
-    def __init__(self, name: str, power=0, supply=0):
+    def __init__(self, name: str):
         self.name = name
         self.allegiance: Player = None
-        self.order: Order = Order
+        self.order: Order = None
         self.army: list[Unit] = []
-        self.muster = 0
-        self.power = power
-        self.supply = supply
-        self.neighbours: list[Region] = None
-        self.isSea = False
+        self.neighbours: list[Region] = []
         self.garrison = None
+        
 
+    def __str__(self):
+        neighbourNames: list[str] = [neighbour.name for neighbour in self.neighbours]
+        order = [f"Current order: {self.order}"] if self.order else []
+        desc = "\n".join([self.name]+[f"Belongs to: {self.allegiance}"]+order+[f"Neighbours: {neighbourNames}"])
+        return desc
+
+    def canStrengthen(self):
+        return False
 
     def changeAllegiance(self, player: Player):
         self.player = player
@@ -55,20 +64,39 @@ class Region:
         return list(set([region for region in self.neighbours if not region.isSea] + seaNeighbours))
 
 class Land(Region):
-    def __init__(self, name:str, power=0, supply=0, isHouse=False, muster=0, garrison=None):
-        super().__init__(name, power=power, supply=supply)
+    def __init__(self, name:str, power=0, supply=0, isHouse=False, muster=0, garrison=None, port=False):
+        super().__init__(name)
         self.powerToken = False
         self.house = isHouse
         self.isSea = False
+        self.canStrengthen = False
         self.muster = muster #0 - regular land, 1 - castle, 2 - fortress
+        self.muster = 0
+        self.power = power
+        self.supply = supply
+        self.port = port
         if garrison:
             self.garrison = garrison
         if isHouse:
             self.garrison = 2
+    
+    def __str__(self):
+        desc = super().__str__()
+        fullDesc = [
+            desc,
+            f"Fortification: {FORTIFICATION[self.muster]}"
+        ]
+        fullDesc += [f"power: {self.power}"] if self.power else [] 
+        + [f"supply: {self.supply}"] if self.supply else [] 
+        + [f"Garrison Strength: {self.garrison}"] if self.garrison else []
+        
 
 class Sea(Region):
     def __init__(self, name):
         super().__init__(name)
         self.isSea = True
-    
+
+    def __str__(self):
+        desc = super().__str__()
+        return "\n".join(desc+["Sea region"])
 

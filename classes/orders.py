@@ -1,18 +1,23 @@
 ###TODO: StrengthenStar, Attack.executeTarget
-from players import Player
-from units import Unit
-from regions import Region
-from typing import Optional
-from utils import ARMY_LIMITS, checkArmyLimit
+
+from typing import Optional, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from .players import Player
+    from .units import Unit
+    from .regions import Region
+from .utils import ARMY_LIMITS, checkArmyLimit
 
 
 class Order:
     def __init__(self, player: Player, region: Optional[Region]=None):
+        self.name: str = ""
         self.player = player
         self.region = region
         self.raidable = False
         self.raidableStar = False
         self.advantage = 0
+        self.courtCost = 0
 
     
     def place(self, region: Region):
@@ -26,7 +31,7 @@ class Order:
         return []
     
     def executeTarget(self, region: Region):
-        pass
+        print(f"Exeecuting order {self} at {region}")
 
     def supporting(self) -> bool:
         return False
@@ -35,27 +40,31 @@ class Order:
         return 0
     
     def remove(self):
+        print(f"Removing order {self} from {self.region}")
         self.region.order = None
         self.region = None
 
     def raid(self):
+        print(f"Order {self} raided")
         self.remove
-
-    def courtCost(self) -> int:
-        return 0
 
 
 class Stengthen(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.name = "Strengthen"
         self.raidable = True
         self.raidableStar = True
 
     def execute(self) -> list[Region]:
-        gain = self.region.power + 1
-        self.player.power += max(gain, self.player.powerToGain)
+        return [self.region] if self.region.canStrengthen else []
+
+    def executeTarget(self, region):
+        gain = region.power + 1
+        toGain = min(gain, self.player.powerToGain)
+        self.player.power += toGain 
+        self.player.powerToGain -= toGain 
         self.remove()
-        return []
     
     def raid(self, raider: Player):
         self.player.power = max(0, self.player.power - 1)
@@ -66,6 +75,7 @@ class Stengthen(Order):
 class Defend(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.name = "Defend"
         self.raidableStar = True
     
     def defenceBonus(self) -> int:
@@ -74,16 +84,16 @@ class Defend(Order):
 class DefendStar(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.courtCost = 1
     
     def defenceBonus(self) -> int:
         return 2
-    
-    def courtCost(self):
-        return 1
+
 
 class Support(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.name = "Support"
         self.raidable = True
         self.raidableStar = True
 
@@ -96,16 +106,15 @@ class Support(Order):
 class SupportStar(Support):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.courtCost = 1
 
     def support(self):
-        return 1
-    
-    def courtCost(self):
         return 1
 
 class Raid(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.name = "Raid"
         self.raidable = True
         self.raidable
     
@@ -121,6 +130,7 @@ class Raid(Order):
 class RaidStar(Raid):
     def __init__(self, player, region: Optional[Region]=None):
         super().__init__(player, region)
+        self.courtCost = 1
 
     def execute(self):
         regions = [region.order.raidableStar or False for region in self.region.neighbours]
