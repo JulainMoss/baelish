@@ -18,16 +18,7 @@ MAX_SUPPLY = 6
 FORTIFICATION = ["None", "Castle", "Fortress"]
 
 def checkArmyLimit(armies: list[tuple[str, list[Unit]]], armyLimit: list[int]) -> bool:
-    armySizes = sorted([len(army) for (_, army) in armies if len(army) > 1], reverse=True)
-    # print(armySizes)
-    if len(armySizes) > len(armyLimit):
-        return False
-    else:
-        for limit, army in zip(armyLimit, armySizes):
-            # print(limit, army)
-            if limit < army:
-                return False
-    return True
+    return np.all([limit >= army for limit, army in zip(armyLimit + [1]*(len(armies)-len(armyLimit)), sorted([len(army) for (_, army) in armies], reverse=True))])
 
 def calculateAttackerStrength(army: list[Unit], region) -> int:
     return np.sum([unit.attackScore(region)for unit in army])
