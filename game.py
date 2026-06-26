@@ -4,7 +4,7 @@ from classes.regions import Land, Sea, Region
 from classes.orders import *
 from classes.units import Ship, Levy
 from classes.players import Stark, Lannister, Baratheon, Targaryen, Tyrell, Greyjoy, Arryn, Martell
-from classes.utils import ARMY_LIMITS
+from classes.utils import ARMY_LIMITS, checkArmyLimit
 
 players = {"Stark": Stark(),
            "Lannister": Lannister(),
@@ -56,21 +56,8 @@ def playersSetUp()->list[Region]:
 def example():
     regions: list[Region] = playersSetUp()
     greyjoy: Greyjoy = players["Greyjoy"]
-    lan: Lannister = players["Lannister"]
     
-    raidOrder = Raid(lan, regions["Riverrun"])
-    strengthenOrder = Strengthen(greyjoy, regions["Seagard"])
-    _ = Levy(regions["Seagard"], greyjoy)
-    _ = Levy(regions["Riverrun"], lan)
-
-    print(strengthenOrder.execute())
-
-    raidOrder.executeTarget(regions["Seagard"])
-    print(lan.power, greyjoy.power)
-    strengthenOrder.place(regions["Seagard"])
     
-    strengthenOrder.executeTarget(regions["Seagard"])
-    print(lan.power, greyjoy.power)
 
 
 if __name__ == "__main__":

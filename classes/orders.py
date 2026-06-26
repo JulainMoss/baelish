@@ -160,10 +160,13 @@ class Attack(Order):
         ))
         for region in possibilities]
 
+        armies = [army for _, army in armies]
+
         return [region for (region, armies) in possibleFutureArmies if checkArmyLimit(armies, maxArmy)]
 
 
     def executeTarget(self, region: Region):
+        # TODO place power token when leaving
         pass
 
 class AttackStar(Attack, OrderStar):

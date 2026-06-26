@@ -24,15 +24,23 @@ setUps = {
 
 class Player:
     def __init__(self):
+        # win ticker
         self.castleCount = 0
         self.power = 5
+        self.powerToGain = 20
+
         self.orders: list[Order] = []
         self.regions: list[Region] = []
         self.cards = [None] # TODO implement house cards
+        
+        # tracks of influence
         self.ironThrone = 0
         self.levies = 0
         self.court = 0
-        self.powerToGain = 20
+
+        self.swordUsed = True
+        self.ravenUsed = True
+        
 
     def __str__(self):
         return "Unknown Player"
@@ -64,6 +72,20 @@ class Player:
     
     def chooseCard(self, battle: Battle):
         return self.cards[0] # TODO implement cards
+    
+    def useValyrianSword(self, battle: Battle):
+        if self.levies == 1 and not self.swordUsed: #player can use the sword
+            decision = True # TODO active decision making
+            if decision:
+                if battle.defender is self:
+                    battle.defenderStrength += 1
+                else:
+                    battle.attackerStrength += 1
+                self.swordUsed = True
+
+    
+    def victory(self):
+        print(str(self), " became victorious")
     
 class Baratheon(Player):
     def __init__(self):
