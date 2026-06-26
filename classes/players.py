@@ -4,6 +4,7 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .orders import Order
     from .regions import Region
+    from .battle import Battle
 from .units import Unit, Levy, Knight, Siege, Ship
 from .utils import MAX_SUPPLY
 
@@ -27,7 +28,7 @@ class Player:
         self.power = 5
         self.orders: list[Order] = []
         self.regions: list[Region] = []
-        self.cards = [] # TODO implement house cards
+        self.cards = [None] # TODO implement house cards
         self.ironThrone = 0
         self.levies = 0
         self.court = 0
@@ -58,8 +59,11 @@ class Player:
             reverse=True
         )
 
-    def decideSupport(self, region: Region): # 3rd party support - others are implied
+    def decideSupport(self, region: Region): # TODO 3rd party support - others are implied
         return False
+    
+    def chooseCard(self, battle: Battle):
+        return self.cards[0] # TODO implement cards
     
 class Baratheon(Player):
     def __init__(self):

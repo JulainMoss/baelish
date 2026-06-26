@@ -1,5 +1,6 @@
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 import numpy as np
+import asyncio
 
 from .utils import calculateArmyStrength, calculateAttackerStrength
 
@@ -8,6 +9,7 @@ if TYPE_CHECKING:
     from .regions import Region
     from .units import Unit
     from .orders import Order
+    from .cards import HouseCard
 
 def countInitialBattleScore(defender: Player, attacker: Player, region: Region, attackingArmy: list[Unit], attackOrder: Order):
     defenderAllies = region.defenceBonus() # defence order bonus
@@ -22,7 +24,7 @@ def countInitialBattleScore(defender: Player, attacker: Player, region: Region, 
 
 
 class Battle:
-    def __init__(self, defender: Player, attacker: Player, attackingArmy: list[Unit], battleRegion: Region, attackerRegion: Region, attackOrder: Order):
+    def __init__(self, attacker: Player, defender: Player, attackingArmy: list[Unit], battleRegion: Region, attackerRegion: Region, attackOrder: Order):
         self.defender = defender
         self.attacker = attacker
         self.battleRegion = battleRegion
@@ -30,12 +32,16 @@ class Battle:
         
         self.attackingArmy = attackingArmy
         self.defendingArmy: list[Unit] = battleRegion.army
+
+        
         
         self.attackOrder = attackOrder
         self.defenderOrder: Order = battleRegion.order
-        self.callSupport()
+        
         self.countInitialScore()
-
+        
+        self.attackerCard: HouseCard = self.attacker.chooseCard(self)
+        self.defenderCard: HouseCard = self.defender.chooseCard(self)
 
     def countInitialScore(self):
         self.defenceSupport = [neighbour.calculateSupport(self.defender, self.attacker, self.region) for neighbour in self.region.neighbours]
@@ -53,4 +59,19 @@ class Battle:
         + calculateAttackerStrength(self.attackingArmy, self.battleRegion)
         + self.attackOrder.advantage
 
+        return self.attackerStrength, self.defenderStrength
+
+    def playHouseCard(self, card: HouseCard, attacker: Optional[bool] = True):
+        if attacker:
+            self.attackerCard = card
+        else:
+            self.defenderCard = card
+
+
+        return True # if both players played their cards    
     
+
+
+def operateBattle(attacker: Player, defender: Player, attackingArmy: list[Unit], battleRegion: Region, attackerRegion: Region, attackOrder: Order):
+    currentBattle = Battle(attacker, defender, attackingArmy, battleRegion, attackerRegion, attackOrder)
+    scores = currentBattle.countInitialScore()
