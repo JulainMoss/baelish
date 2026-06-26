@@ -24,7 +24,7 @@ setUps = {
 class Player:
     def __init__(self):
         self.castleCount = 0
-        self.power = 0
+        self.power = 5
         self.orders: list[Order] = []
         self.regions: list[Region] = []
         self.cards = [] # TODO implement house cards

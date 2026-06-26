@@ -79,7 +79,6 @@ class Land(Region):
         self.powerToken = False
         self.isHouse = isHouse
         self.isSea = False
-        self.canStrengthen = False
         self.muster = muster #0 - regular land, 1 - castle, 2 - fortress
 
         self.port = port

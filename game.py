@@ -58,25 +58,19 @@ def example():
     greyjoy: Greyjoy = players["Greyjoy"]
     lan: Lannister = players["Lannister"]
     
-    raidOrder = Raid(greyjoy, regions["Góry Księżycowe"])
-    raidStarOrder = RaidStar(greyjoy, regions["Zatoka Rozbitków"])
-    _ = Levy(regions["Góry Księżycowe"], greyjoy)
-    _ = Ship(regions["Zatoka Rozbitków"], greyjoy)
+    raidOrder = Raid(lan, regions["Riverrun"])
+    strengthenOrder = Strengthen(greyjoy, regions["Seagard"])
+    _ = Levy(regions["Seagard"], greyjoy)
+    _ = Levy(regions["Riverrun"], lan)
 
-    defense = Defend(lan, regions["Wąskie Morze"])
-    sup = Support(lan, regions["Szczypcowy Przylądek"])
-    _ = Levy(regions["Szczypcowy Przylądek"], lan)
-    _ = Ship(regions["Wąskie Morze"], lan)
+    print(strengthenOrder.execute())
 
-    print([r.name for r in greyjoy.regions if r.order])
-    print([r.name for r in lan.regions if r.order])
-
-    raidOrder.executeTarget(regions["Szczypcowy Przylądek"])
-    raidStarOrder.executeTarget(regions["Wąskie Morze"])
-
-    print([r.name for r in greyjoy.regions if r.order])
-    print([r.name for r in lan.regions if r.order])
-
+    raidOrder.executeTarget(regions["Seagard"])
+    print(lan.power, greyjoy.power)
+    strengthenOrder.place(regions["Seagard"])
+    
+    strengthenOrder.executeTarget(regions["Seagard"])
+    print(lan.power, greyjoy.power)
 
 
 if __name__ == "__main__":

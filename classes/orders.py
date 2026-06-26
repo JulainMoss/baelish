@@ -56,7 +56,7 @@ class OrderStar():
     def __init__(self):
         self.courtCost = True
 
-class Stengthen(Order):
+class Strengthen(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
         self.name = "Strengthen"
@@ -64,7 +64,7 @@ class Stengthen(Order):
         self.raidableStar = True
 
     def execute(self) -> list[Region]:
-        return [self.region] if self.region.canStrengthen else []
+        return [self.region] if self.region.canStrengthen() else []
 
     def executeTarget(self, region):
         gain = region.power + 1
@@ -77,7 +77,7 @@ class Stengthen(Order):
         self.player.power = max(0, self.player.power - 1)
         raider.power += 1 if raider.powerToGain else 0
         raider.powerToGain = max(0, raider.powerToGain - 1)
-        super().raid()
+        super().raid(raider)
 
 class Defend(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
