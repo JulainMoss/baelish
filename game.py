@@ -2,6 +2,7 @@ import json
 from eng import engToPol
 from classes.regions import Land, Sea, Region
 from classes.orders import Order
+from classes.units import Ship
 from classes.players import Stark, Lannister, Baratheon, Targaryen, Tyrell, Greyjoy, Arryn, Martell
 
 players = {"Stark": Stark(),
@@ -42,13 +43,24 @@ def mapSetUp():
             regions[name].addNeighbour(regions[neighbour])
     return regions
 
-def playersSetUp(regions: dict[str, Region]):
+def playersSetUpWMap(regions: dict[str, Region]):
     for player in players.values():
         player.setUp(regions)
 
+def playersSetUp():
+    regions = mapSetUp()
+    playersSetUpWMap(regions)
+    return regions
+
 
 def example():
-    regions = mapSetUp()
-    playersSetUp(regions)
-    print(regions["Winterfell"])
-    print(regions["Zatoka Żelaznych Ludzi"])
+    regions = playersSetUp()
+    greyjoy = players["Greyjoy"]
+    print([r.name for r in regions["Pyke"].findSeaNeighbours(greyjoy)])
+    _ = Ship(regions["Morze Zachodzącego Słońca"], greyjoy)
+    _ = Ship(regions["Lodowa Zatoka"], greyjoy)
+    print([r.name for r in regions["Pyke"].findSeaNeighbours(greyjoy)])
+
+
+if __name__ == "__main__":
+    example()

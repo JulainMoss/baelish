@@ -1,6 +1,6 @@
 from __future__ import annotations
 import numpy as np
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Optional
 
 if TYPE_CHECKING:
     from .units import Unit
@@ -60,14 +60,15 @@ class Region:
     def calculateAttackStrength(self):
         strength = np.sum([unit.attackScore() for unit in self.army]) 
 
-    def findSeaNeighbours(self, player: Player, burnList: list[Region]) -> list[Region]:
+    def findSeaNeighbours(self, player: Player, burnList: Optional[list[Region]]=[]) -> list[Region]:
+        print(self.name)
         if self.allegiance != player:
             return []
         seas = [region for region in self.neighbours if region.isSea and region not in burnList]
         seaNeighbours = []
         for sea in seas:
             seaNeighbours += sea.findSeaNeighbours(player, burnList+[self])
-        return [region for region in self.neighbours if not region.isSea] + seaNeighbours
+        return list(set([region for region in self.neighbours if not region.isSea] + seaNeighbours))
 
 class Land(Region):
     def __init__(self, name:str, power=0, supply=0, isHouse=False, muster=0, garrison=None, port=False):
