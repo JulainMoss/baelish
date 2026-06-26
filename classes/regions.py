@@ -71,7 +71,6 @@ class Land(Region):
         self.isSea = False
         self.canStrengthen = False
         self.muster = muster #0 - regular land, 1 - castle, 2 - fortress
-        self.muster = 0
         self.power = power
         self.supply = supply
         self.port = port
@@ -79,6 +78,9 @@ class Land(Region):
             self.garrison = garrison
         if isHouse:
             self.garrison = 2
+    
+    def canStrengthen(self):
+        return True
     
     def __str__(self):
         desc = super().__str__()
@@ -89,6 +91,8 @@ class Land(Region):
         fullDesc += [f"power: {self.power}"] if self.power else [] 
         + [f"supply: {self.supply}"] if self.supply else [] 
         + [f"Garrison Strength: {self.garrison}"] if self.garrison else []
+        + ["Region has Port"] if self.port else []
+        return "\n".join(fullDesc)
         
 
 class Sea(Region):
