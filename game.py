@@ -1,9 +1,10 @@
 import json
 from eng import engToPol
 from classes.regions import Land, Sea, Region
-from classes.orders import Order
-from classes.units import Ship
+from classes.orders import Order, Attack
+from classes.units import Ship, Levy
 from classes.players import Stark, Lannister, Baratheon, Targaryen, Tyrell, Greyjoy, Arryn, Martell
+from classes.utils import ARMY_LIMITS
 
 players = {"Stark": Stark(),
            "Lannister": Lannister(),
@@ -14,7 +15,7 @@ players = {"Stark": Stark(),
            "Baratheon": Baratheon(),
            "Martell": Martell()}
 
-def mapSetUp():
+def mapSetUp()->list[Region]:
     with open("./data/map.json", 'r', encoding='utf-8') as f:
         jsonData = json.load(f)
     regions = {}
@@ -24,7 +25,6 @@ def mapSetUp():
         traits = region['traits'].keys()
         traitVals = region['traits']
 
-        # print(name)
         if engToPol["sea"] in traits:
             item = Sea(name)
         else:
@@ -47,20 +47,26 @@ def playersSetUpWMap(regions: dict[str, Region]):
     for player in players.values():
         player.setUp(regions)
 
-def playersSetUp():
+def playersSetUp()->list[Region]:
     regions = mapSetUp()
     playersSetUpWMap(regions)
     return regions
 
 
 def example():
-    regions = playersSetUp()
-    greyjoy = players["Greyjoy"]
-    print([r.name for r in regions["Pyke"].findSeaNeighbours(greyjoy)])
-    _ = Ship(regions["Morze Zachodzącego Słońca"], greyjoy)
-    _ = Ship(regions["Lodowa Zatoka"], greyjoy)
-    print([r.name for r in regions["Pyke"].findSeaNeighbours(greyjoy)])
+    regions: list[Region] = playersSetUp()
+    greyjoy: Greyjoy = players["Greyjoy"]
+    sup = greyjoy.countSupply()
+    
+    # print([(r.name, len(r.army), str(r.allegiance)) for r in greyjoy.regions])
+    _ = Levy(regions["Palec Flinta"], greyjoy)
+    _ = Levy(regions["Palec Flinta"], greyjoy)
+    # print([(r.name, len(r.army)) for r in greyjoy.regions])
+    print([r.name for r in regions["Strażnica n. Szarą Wodą"].findSeaNeighbours(greyjoy)])
+    attackOrder = Attack(greyjoy, regions["Strażnica n. Szarą Wodą"])
+    print([r.name for r in attackOrder.execute(regions["Strażnica n. Szarą Wodą"].army[0])])
 
+    
 
 if __name__ == "__main__":
     example()

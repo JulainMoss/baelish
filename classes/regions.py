@@ -10,9 +10,13 @@ if TYPE_CHECKING:
 from .utils import FORTIFICATION
 
 class Region:
-    def __init__(self, name: str):
+    def __init__(self, name: str, power=0, supply=0, ):
         self.name = name
         self.allegiance: Player = None
+
+        self.power = power
+        self.supply = supply
+
         self.order: Order = None
         self.army: list[Unit] = []
         self.neighbours: list[Region] = []
@@ -61,7 +65,6 @@ class Region:
         strength = np.sum([unit.attackScore() for unit in self.army]) 
 
     def findSeaNeighbours(self, player: Player, burnList: Optional[list[Region]]=[]) -> list[Region]:
-        print(self.name)
         if self.allegiance != player:
             return []
         seas = [region for region in self.neighbours if region.isSea and region not in burnList]
@@ -72,14 +75,13 @@ class Region:
 
 class Land(Region):
     def __init__(self, name:str, power=0, supply=0, isHouse=False, muster=0, garrison=None, port=False):
-        super().__init__(name)
+        super().__init__(name, power, supply)
         self.powerToken = False
         self.isHouse = isHouse
         self.isSea = False
         self.canStrengthen = False
         self.muster = muster #0 - regular land, 1 - castle, 2 - fortress
-        self.power = power
-        self.supply = supply
+
         self.port = port
         if garrison:
             self.garrison = garrison

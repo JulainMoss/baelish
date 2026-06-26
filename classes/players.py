@@ -47,14 +47,14 @@ class Player:
         return np.sum([region.power for region in self.regions])
     
     def countSupply(self) -> int:
-        return max(np.sum([region.supply for region in self.regions]), MAX_SUPPLY)
+        return min(np.sum([region.supply for region in self.regions]), MAX_SUPPLY)
     
     def countScore(self) -> int:
         return len([region for region in self.regions if region.muster > 0])
     
     def armies(self) -> list[tuple[str, int]]:
         return sorted(
-            [(region.name, region.army) for region in self.regions if region.army > 0], 
+            [(region.name, region.army) for region in self.regions if region.army], 
             reverse=True
         )
     

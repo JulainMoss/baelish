@@ -4,8 +4,8 @@ from typing import Optional, TYPE_CHECKING
 
 if TYPE_CHECKING:
     from .players import Player
-    from .units import Unit
     from .regions import Region
+from .units import Unit
 from .utils import ARMY_LIMITS, checkArmyLimit
 
 
@@ -13,13 +13,16 @@ class Order:
     def __init__(self, player: Player, region: Optional[Region]=None):
         self.name: str = ""
         self.player = player
-        self.region = region
+        if region:
+            self.place(region)
         self.raidable = False
         self.raidableStar = False
         self.advantage = 0
         self.courtCost = 0
 
-    
+    def __str__(self):
+        return self.name
+
     def place(self, region: Region):
         self.region = region
         region.order = self
@@ -31,7 +34,7 @@ class Order:
         return []
     
     def executeTarget(self, region: Region):
-        print(f"Exeecuting order {self} at {region}")
+        print(f"Exeecuting order {self} at {region.name}")
 
     def supporting(self) -> bool:
         return False
@@ -142,24 +145,33 @@ class Attack(Order):
         super().__init__(player, region)
         self.advantage = advantage
     
+    # def _(self, unitToMove: Unit) -> list[Region]:
+    #     self.execute([unitToMove])
+
     def execute(self, unitsToMove: list[Unit]) -> list[Region]:
+        if isinstance(unitsToMove, Unit):
+            unitsToMove = [unitsToMove]
         countToMove = len(unitsToMove)
         armies = self.player.armies()
         supplies = self.player.countSupply()
         maxArmy = ARMY_LIMITS[supplies]
         # 1: defining regions neighbouring order where units can be moved
         possibilities = self.region.findSeaNeighbours(self.player) if not self.region.isSea else [region for region in self.region.neighbours if region.isSea]
-
+        if self.region in possibilities:
+            possibilities.remove(self.region)
+        
+        # print([p.name for p in possibilities])
         # 2: checking possibilities meeting supply limit
 
         possibleFutureArmies = [(region, sorted(
-            [(name, army + countToMove) if name == region.name else (name, army) for (name, army) in armies]
+            [(name, army + unitsToMove) if name == region.name else (name, army) for (name, army) in armies]
             , reverse=True
         ))
         for region in possibilities]
 
         return [region for (region, armies) in possibleFutureArmies if checkArmyLimit(armies, maxArmy)]
-    
+
+
     def executeTarget(self, region: Region):
         pass
 

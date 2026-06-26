@@ -20,12 +20,14 @@ MAX_SUPPLY = 6
 
 FORTIFICATION = ["None", "Castle", "Fortress"]
 
-def checkArmyLimit(armies: list[tuple[str, int]], armyLimit: list[int]) -> bool:
-    armySizes = [army for (_, army) in armies]
+def checkArmyLimit(armies: list[tuple[str, list[Unit]]], armyLimit: list[int]) -> bool:
+    armySizes = sorted([len(army) for (_, army) in armies if len(army) > 1], reverse=True)
+    # print(armySizes)
     if len(armySizes) > len(armyLimit):
         return False
     else:
         for limit, army in zip(armyLimit, armySizes):
+            # print(limit, army)
             if limit < army:
                 return False
     return True
