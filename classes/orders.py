@@ -44,13 +44,13 @@ class Order:
         return 0
     
     def remove(self):
-        print(f"Removing order {self} from {self.region}")
-        self.region.order = False
+        print(f"Removing order {self} from {self.region.name}")
+        self.region.order = None
         self.region = None
 
-    def raid(self):
-        print(f"Order {self} raided")
-        self.remove
+    def raid(self, player: Player):
+        print(f"Order {self} raided by {str(player)}")
+        self.remove()
 
 class OrderStar():
     def __init__(self):
