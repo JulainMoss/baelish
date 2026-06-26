@@ -9,6 +9,7 @@ from .units import Unit
 from .utils import ARMY_LIMITS, checkArmyLimit
 
 
+
 class Order:
     def __init__(self, player: Player, region: Optional[Region]=None):
         self.name: str = ""
@@ -44,13 +45,16 @@ class Order:
     
     def remove(self):
         print(f"Removing order {self} from {self.region}")
-        self.region.order = None
+        self.region.order = False
         self.region = None
 
     def raid(self):
         print(f"Order {self} raided")
         self.remove
 
+class OrderStar():
+    def __init__(self):
+        self.courtCost = True
 
 class Stengthen(Order):
     def __init__(self, player: Player, region: Optional[Region]=None):
@@ -84,10 +88,9 @@ class Defend(Order):
     def defenceBonus(self) -> int:
         return 1
     
-class DefendStar(Order):
+class DefendStar(Order, OrderStar):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
-        self.courtCost = 1
     
     def defenceBonus(self) -> int:
         return 2
@@ -106,10 +109,9 @@ class Support(Order):
     def supporting(self):
         return True
 
-class SupportStar(Support):
+class SupportStar(Support, OrderStar):
     def __init__(self, player: Player, region: Optional[Region]=None):
         super().__init__(player, region)
-        self.courtCost = 1
 
     def support(self):
         return 1
@@ -122,23 +124,24 @@ class Raid(Order):
         self.raidable
     
     def execute(self) -> list[Region]:
-        regions = [region.order.raidable or False for region in self.region.neighbours]
-        raidable = self.region.neighbours if self.region.isSea else [not region.isSea for region in self.region.neighbours]
-        return [region for region, condition in zip(self.region.neighbours, regions and raidable) if condition]
+        raidable = [region.order.raidable if region.order and region.player is not self.player else False for region in self.region.neighbours]
+        available = [True for _ in self.region.neighbours] if self.region.isSea else [not region.isSea for region in self.region.neighbours]
+        conditions = [r and a for (r, a) in zip(raidable, available)]
+        return [region for region, condition in zip(self.region.neighbours, conditions) if condition]
 
     def executeTarget(self, region: Region):
         region.raid(self.player)
         self.remove()
 
-class RaidStar(Raid):
+class RaidStar(Raid, OrderStar):
     def __init__(self, player, region: Optional[Region]=None):
         super().__init__(player, region)
-        self.courtCost = 1
 
-    def execute(self):
-        regions = [region.order.raidableStar or False for region in self.region.neighbours]
-        raidable = [True] if self.region.isSea else [not region.isSea for region in self.region.neighbours]
-        return [region for region, condition in zip(self.region.neighbours, regions and raidable) if condition]
+    def execute(self) -> list[Region ]:
+        raidable = [region.order.raidableStar if region.order and region.player is not self.player else False for region in self.region.neighbours]
+        available = self.region.neighbours if self.region.isSea else [not region.isSea for region in self.region.neighbours]
+        conditions = [r and a for (r, a) in zip(raidable, available)]
+        return [region for region, condition in zip(self.region.neighbours, conditions) if condition]
 
 class Attack(Order):
     def __init__(self, player: Player, region: Optional[Region]=None, advantage=0):
@@ -179,3 +182,4 @@ class AttackStar(Attack):
     def __init__(self, player, region = None):
         super().__init__(player, region, advantage=1)
         self.courtCost = 1
+        self.advantage = 1

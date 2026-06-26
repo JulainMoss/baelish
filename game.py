@@ -1,7 +1,7 @@
 import json
 from eng import engToPol
 from classes.regions import Land, Sea, Region
-from classes.orders import Order, Attack
+from classes.orders import *
 from classes.units import Ship, Levy
 from classes.players import Stark, Lannister, Baratheon, Targaryen, Tyrell, Greyjoy, Arryn, Martell
 from classes.utils import ARMY_LIMITS
@@ -34,7 +34,7 @@ def mapSetUp()->list[Region]:
             muster = int(traitVals[engToPol['muster']]) if engToPol["muster"] in traits else 0
             hasPort = True if engToPol["port"] in traits else False
             item = Land(name, power, supply, isHouse=isHouse, muster=muster, port=hasPort)
-            item.changeAllegiance(owner)
+            item.changePlayer(owner)
         regions[name] = item
         neighbours.append((name, region["borders"]))
 
@@ -56,16 +56,16 @@ def playersSetUp()->list[Region]:
 def example():
     regions: list[Region] = playersSetUp()
     greyjoy: Greyjoy = players["Greyjoy"]
-    sup = greyjoy.countSupply()
+    lan: Lannister = players["Lannister"]
     
-    # print([(r.name, len(r.army), str(r.allegiance)) for r in greyjoy.regions])
-    _ = Levy(regions["Palec Flinta"], greyjoy)
-    _ = Levy(regions["Palec Flinta"], greyjoy)
-    # print([(r.name, len(r.army)) for r in greyjoy.regions])
-    print([r.name for r in regions["Strażnica n. Szarą Wodą"].findSeaNeighbours(greyjoy)])
-    attackOrder = Attack(greyjoy, regions["Strażnica n. Szarą Wodą"])
-    print([r.name for r in attackOrder.execute(regions["Strażnica n. Szarą Wodą"].army[0])])
+    raidStarOrder = Raid(greyjoy, regions["Góry Księżycowe"])
+    raidOrder = RaidStar(greyjoy, regions["Zatoka Rozbitków"])
 
+    defense = Defend(lan, regions["Wąskie Morze"])
+    sup = Support(lan, regions["Szczypcowy Przylądek"])
+
+    print([r.name for r in raidStarOrder.execute()])
+    print([r.name for r in raidOrder.execute()])
     
 
 if __name__ == "__main__":

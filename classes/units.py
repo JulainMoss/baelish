@@ -5,13 +5,13 @@ if TYPE_CHECKING:
     from .regions import Region
 
 class Unit:
-    def __init__(self, region: Region, allegiance: Player):
+    def __init__(self, region: Region, player: Player):
         self.region = region
-        self.allegiance = allegiance
+        self.player = player
         self.strength = 0
         self.inRetreat = False
-        if region.allegiance is not allegiance:
-            allegiance.regions.append(region)
+        if region.player is not player:
+            player.regions.append(region)
         region.addArmy(self)
 
     def __str__(self):
@@ -24,8 +24,8 @@ class Unit:
         return self.strength
 
 class LandUnit(Unit):
-    def __init__(self, region: Region, allegiance: Player):
-        super().__init__(region, allegiance)
+    def __init__(self, region: Region, player: Player):
+        super().__init__(region, player)
 
     def __str__(self):
         return "Unknown Land Unit"
@@ -34,24 +34,24 @@ class LandUnit(Unit):
         return not region.isSea
 
 class Levy(LandUnit):
-    def __init__(self, region: Region, allegiance: Player):
-        super().__init__(region, allegiance)
+    def __init__(self, region: Region, player: Player):
+        super().__init__(region, player)
         self.strength = 1
     
     def __str__(self):
         return "Levy"
     
 class Knight(LandUnit):
-    def __init__(self, region: Region, allegiance: Player):
-        super().__init__(region, allegiance)
+    def __init__(self, region: Region, player: Player):
+        super().__init__(region, player)
         self.strength = 2
     
     def __str__(self):
         return "Knight"
 
 class Siege(LandUnit):
-    def __init__(self, region: Region, allegiance: Player):
-        super().__init__(region, allegiance)
+    def __init__(self, region: Region, player: Player):
+        super().__init__(region, player)
 
     def __str__(self):
         return "Siege Weapon"
@@ -63,8 +63,8 @@ class Siege(LandUnit):
             return 0
 
 class Ship(Unit):
-    def __init__(self, region: Region, allegiance: Player):
-        super().__init__(region, allegiance)
+    def __init__(self, region: Region, player: Player):
+        super().__init__(region, player)
         self.strength = 1
     
     def canMoveTo(self, region: Region):

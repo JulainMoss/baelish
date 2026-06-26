@@ -12,7 +12,7 @@ from .utils import FORTIFICATION
 class Region:
     def __init__(self, name: str, power=0, supply=0, ):
         self.name = name
-        self.allegiance: Player = None
+        self.player: Player = None
 
         self.power = power
         self.supply = supply
@@ -27,17 +27,17 @@ class Region:
         neighbourNames: list[str] = [neighbour.name for neighbour in self.neighbours]
         order = [f"Current order: {self.order}"] if self.order else []
         armies = [f"Army: {", ".join([str(unit) for unit in self.army])}"] if self.army else []
-        desc = "\n".join([self.name]+[f"Belongs to: {self.allegiance}"]+order+[f"Neighbours: {neighbourNames}"]+armies)
+        desc = "\n".join([self.name]+[f"Belongs to: {self.player}"]+order+[f"Neighbours: {neighbourNames}"]+armies)
         return desc
 
     def addArmy(self, unit: Unit):
         self.army.append(unit)
-        self.allegiance = unit.allegiance
+        self.player = unit.player
 
     def canStrengthen(self):
         return False
 
-    def changeAllegiance(self, player: Player):
+    def changePlayer(self, player: Player):
         self.player = player
 
     def addNeighbour(self, neighbour: Region):
@@ -65,7 +65,7 @@ class Region:
         strength = np.sum([unit.attackScore() for unit in self.army]) 
 
     def findSeaNeighbours(self, player: Player, burnList: Optional[list[Region]]=[]) -> list[Region]:
-        if self.allegiance != player:
+        if self.player != player:
             return []
         seas = [region for region in self.neighbours if region.isSea and region not in burnList]
         seaNeighbours = []
