@@ -57,8 +57,8 @@ class Player:
             [(region.name, region.army) for region in self.regions if region.army], 
             reverse=True
         )
-    
-    def decideSupport(region: Region): # 3rd party support - others are implied
+
+    def decideSupport(self, region: Region): # 3rd party support - others are implied
         return False
     
 class Baratheon(Player):

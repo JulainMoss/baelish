@@ -14,6 +14,9 @@ class Region:
         self.name = name
         self.player: Player = None
 
+        self.supportDefender = False
+        self.supportAttacker = False
+
         self.power = power
         self.supply = supply
 
@@ -52,17 +55,25 @@ class Region:
     def defenceBonus(self):
         return self.order.defenceBonus()
     
-    def calculateSupport(self, region: Region) -> int:
+    def calculateSupport(self, player, enemy, region) -> int:
         if self.order.supporting and (self.isSea or not region.isSea):
-            return self.order.support() +  self.calculateArmyStrength()
+            # can support
+            if player is self.player:
+                # same user support
+                return (self.order, self.army)
+            elif self.player is not enemy and self.player.decideSupport(self):
+                # 3rd user has to decide
+                return (self.order, self.army)
+            else:
+                return (0, [])    
         else:
-            return 0
+            return (0, [])
 
-    def calculateArmyStrength(self):
-        strength = np.sum([unit.strength for unit in self.army]) 
+    def calculateArmyStrength(self) -> int:
+        return np.sum([unit.strength for unit in self.army]) 
 
-    def calculateAttackStrength(self):
-        strength = np.sum([unit.attackScore() for unit in self.army]) 
+    def calculateAttackStrength(self) -> int:
+        return np.sum([unit.attackScore() for unit in self.army]) 
 
     def findSeaNeighbours(self, player: Player, burnList: Optional[list[Region]]=[]) -> list[Region]:
         if self.player != player:

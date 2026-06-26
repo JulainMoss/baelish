@@ -1,3 +1,4 @@
+import numpy as np
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -28,4 +29,8 @@ def checkArmyLimit(armies: list[tuple[str, list[Unit]]], armyLimit: list[int]) -
                 return False
     return True
 
+def calculateAttackerStrength(army: list[Unit], region) -> int:
+    return np.sum([unit.attackScore(region)for unit in army])
 
+def calculateArmyStrength(army: list[Unit])->int:
+    return np.sum([unit.strength for unit in army])

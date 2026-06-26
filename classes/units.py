@@ -4,6 +4,7 @@ if TYPE_CHECKING:
     from .players import Player
     from .regions import Region
 
+
 class Unit:
     def __init__(self, region: Region, player: Player):
         self.region = region
