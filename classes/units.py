@@ -10,6 +10,7 @@ class Unit:
         self.allegiance = allegiance
         self.strength = 0
         self.inRetreat = False
+        self.region.addArmy(self)
     
     def __str__(self):
         return "Unknown Unit"

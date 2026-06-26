@@ -4,15 +4,20 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     from .orders import Order
     from .regions import Region
+from .units import Unit, Levy, Knight, Siege, Ship
 from .utils import MAX_SUPPLY
 
-{
+unitNames = {"knight": Knight, "levy": Levy, "ship": Ship, "siege": Siege}
+
+setUps = {
     "House Baratheon": {"Smocza Skała": {"knight": 1, "levy": 1}, "Zatoka Rozbitków": {"ship": 2}, "Królewski Las": {"levy": 1}},
     "House Stark": {"Morze Dreszczy": {"ship": 1}, "Biały Port": {"levy": 1}, "Winterfell": {"knight": 1, "levy": 1}},
     "House Lannister": {"Złota Cieśnina": {"ship": 1}, "Kamienny Sept": {"levy": 1}, "Lannisport": {"knight": 1, "levy": 1}},
     "House Greyjoy": {"Strażnica n. Szarą Wodą": {"levy": 1}, "Zatoka Żelaznych Ludzi": {"ship" : 1}, "Pyke" : {"knight": 1, "levy": 1, "ship": 1}},
     "House Tyrell": {"Cieśnina Redwyne'ów": {"ship": 1}, "Dornijskie Pogranicze": {"levy": 1}, "Wysogród": {"levy": 1, "knight": 1}},
     "House Martell": {"Morze Dornijskie": {"ship": 1}, "Słoneczna Włócznia": {"knight": 1, "levy": 1}, "Słony Brzeg": {"levy": 1}},
+    "House Targaryen": {},
+    "House Arryn": {},
     "Unknown Player": {}
 }
 
@@ -30,6 +35,13 @@ class Player:
 
     def __str__(self):
         return "Unknown Player"
+
+    def setUp(self, regions: dict[str, Region]):
+        unitSetUp = setUps[str(self)]
+        for region in unitSetUp.keys():
+            for type in unitSetUp[region].keys():
+                for _ in range(unitSetUp[region][type]):
+                    __ = unitNames[type](regions[region], self)
 
     def countCrowns(self) -> int:
         return np.sum([region.power for region in self.regions])

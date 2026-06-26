@@ -113,7 +113,7 @@
          "Biały Port",
          "Wąskie Morze",
          "Strażnica n. Szarą Wodą",
-         "morzegard",
+         "Seagard",
          "Bliźniaki"
       ]
    },
@@ -144,7 +144,7 @@
          "Fosa Cailin",
          "Lodowa Zatoka",
          "Palec Flinta",
-         "morzegard",
+         "Seagard",
          "Zatoka Żelaznych Ludzi"
       ]
    },
@@ -182,7 +182,7 @@
          "Palec Flinta",
          "Pyke",
          "Morze Zachodzącego Słońca",
-         "morzegard",
+         "Seagard",
          "Strażnica n. Szarą Wodą",
          "Riverrun",
          "Złota Cieśnina"
@@ -202,7 +202,7 @@
       ]
    },
    {
-      "name": "morzegard",
+      "name": "Seagard",
       "traits": {
          "mobilizacja": "2",
          "władza": "1",
@@ -225,7 +225,7 @@
       },
       "borders": [
          "Zatoka Żelaznych Ludzi",
-         "morzegard",
+         "Seagard",
          "Złota Cieśnina",
          "Lannisport",
          "Kamienny Sept",
@@ -310,7 +310,7 @@
       "borders": [
          "Fosa Cailin",
          "Wąskie Morze",
-         "morzegard",
+         "Seagard",
          "Paluchy",
          "Góry Księżycowe"
       ]

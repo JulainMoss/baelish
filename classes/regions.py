@@ -6,7 +6,8 @@ if TYPE_CHECKING:
     from .units import Unit
     from .players import Player
     from .orders import Order
-    from .utils import FORTIFICATION
+
+from .utils import FORTIFICATION
 
 class Region:
     def __init__(self, name: str):
@@ -21,8 +22,13 @@ class Region:
     def __str__(self):
         neighbourNames: list[str] = [neighbour.name for neighbour in self.neighbours]
         order = [f"Current order: {self.order}"] if self.order else []
-        desc = "\n".join([self.name]+[f"Belongs to: {self.allegiance}"]+order+[f"Neighbours: {neighbourNames}"])
+        armies = [f"Army: {", ".join([str(unit) for unit in self.army])}"] if self.army else []
+        desc = "\n".join([self.name]+[f"Belongs to: {self.allegiance}"]+order+[f"Neighbours: {neighbourNames}"]+armies)
         return desc
+
+    def addArmy(self, unit: Unit):
+        self.army.append(unit)
+        self.allegiance = unit.allegiance
 
     def canStrengthen(self):
         return False
@@ -89,9 +95,9 @@ class Land(Region):
             f"Fortification: {FORTIFICATION[self.muster]}"
         ]
         fullDesc += [f"power: {self.power}"] if self.power else [] 
-        + [f"supply: {self.supply}"] if self.supply else [] 
-        + [f"Garrison Strength: {self.garrison}"] if self.garrison else []
-        + ["Region has Port"] if self.port else []
+        fullDesc += [f"supply: {self.supply}"] if self.supply else [] 
+        fullDesc += [f"Garrison Strength: {self.garrison}"] if self.garrison else []
+        fullDesc += ["Region has Port"] if self.port else []
         return "\n".join(fullDesc)
         
 
@@ -102,5 +108,5 @@ class Sea(Region):
 
     def __str__(self):
         desc = super().__str__()
-        return "\n".join(desc+["Sea region"])
+        return "\n".join([desc]+["Sea region"])
 
