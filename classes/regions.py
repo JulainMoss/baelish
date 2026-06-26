@@ -65,15 +65,15 @@ class Region:
             return []
         seas = [region for region in self.neighbours if region.isSea and region not in burnList]
         seaNeighbours = []
-        for sea in seaNeighbours:
+        for sea in seas:
             seaNeighbours += sea.findSeaNeighbours(player, burnList+[self])
-        return list(set([region for region in self.neighbours if not region.isSea] + seaNeighbours))
+        return [region for region in self.neighbours if not region.isSea] + seaNeighbours
 
 class Land(Region):
     def __init__(self, name:str, power=0, supply=0, isHouse=False, muster=0, garrison=None, port=False):
         super().__init__(name)
         self.powerToken = False
-        self.house = isHouse
+        self.isHouse = isHouse
         self.isSea = False
         self.canStrengthen = False
         self.muster = muster #0 - regular land, 1 - castle, 2 - fortress
